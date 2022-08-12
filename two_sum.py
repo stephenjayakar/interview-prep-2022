@@ -24,25 +24,9 @@ class Solution:
         return (-1, -1)
 
 s = Solution()
-assert([0, 1] == s.twoSum([2,7,11,15], 9))
-assert([0, 4] == s.twoSum([2,7,11,15, 2], 4))
-assert([0, 1] == s.twoSum([3,3], 6))
+method = s.twoSumOneIteration
+assert([0, 1] == sorted(method([2,7,11,15], 9)))
+assert([0, 4] == sorted(method([2,7,11,15, 2], 4)))
+assert([0, 1] == sorted(method([3,3], 6)))
 
 
-# def twoSumNotDistinct(self, nums: list[int], target: int) -> list[int]:
-#     # going to have index and num
-#     num_to_indexes = {}
-#     for i, num in enumerate(nums):
-#         num_to_indexes.setdefault(num, []).append(i)
-
-#     for num in num_to_indexes.keys():
-#         num_index = num_to_indexes[num][0]
-#         other_num = target - num
-#         # special case for equality
-#         if other_num == num and len(num_to_indexes[num]) > 1:
-#             other_num_index = num_to_indexes[num][1]
-#             if other_num_index != num_index:
-#                 return [num_index, other_num_index]
-#         elif other_num in num_to_indexes:
-#             return sorted([num_index, num_to_indexes[other_num][0]])
-#     return []

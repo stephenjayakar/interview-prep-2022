@@ -1,5 +1,3 @@
-# rewrite this solution. it kind of sucks.
-
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
         num_to_index = {}
